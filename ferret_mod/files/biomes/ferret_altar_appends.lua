@@ -33,7 +33,7 @@ function init( x, y, w, h )
             return
         end
 
-        for _ = 0, 10 do
+        for _ = 0, 1 do
             local ferret_id = EntityLoad("mods/ferret_mod/files/ferret.xml", spawn_x, spawn_y)
             -- this will be a friendly ferret, no gold for you!
             SetFerretFriendly(ferret_id, true)
