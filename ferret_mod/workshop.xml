@@ -1,0 +1,14 @@
+	<Mod
+		name="FerretMod"
+		description="Add Ferrets from the Ferret rescue ran by PirateSoftware to the game, either as friends or as enemies!
+		You can configure how the ferrets behave from the mod config.
+		By default ferrets are friends that don't attack you, but this also means they don't reward you for attacking them!
+		There's also some twitch integration events added so chat can join in on the fun!
+
+		Find the github repo at https://github.com/RedBrumbler/Noita-FerretMod if you're interested in how this mod is made.
+		Go Make Games! And watch the ferrets at http://ferrets.live"
+		tags="streaming integration,funny,creatures"
+		dont_upload_folders=""
+		dont_upload_files="workshop_preview_bg.png"
+	>
+	</Mod>

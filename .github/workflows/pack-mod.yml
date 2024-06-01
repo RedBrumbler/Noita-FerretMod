@@ -1,0 +1,68 @@
+name: Pack mod
+
+on:
+  push:
+    paths-ignore:
+      - '*.ps1'
+      - '.gitignore'
+
+env:
+  project_name: "FerretMod"
+
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: seanmiddleditch/gha-setup-ninja@v3
+
+      - name: Extract version
+        if: startsWith(github.ref, 'refs/tags/v')
+        id: version
+        run: |
+          echo "TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_OUTPUT}
+          echo "VERSION=${GITHUB_REF#refs/tags/v}" >> ${GITHUB_OUTPUT}
+
+      - name: CMake generate without version
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        run: |
+          cmake -G "Ninja" -B "build" -S "ferret_mod"
+          cmake --build "build"
+
+      - name: CMake generate with version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          cmake -G "Ninja" -B "build" -S "ferret_mod" -DMOD_VERSION=${{ steps.version.outputs.VERSION }}
+          cmake --build "build"
+
+      - name: Pack
+        run: |
+          cd ${GITHUB_WORKSPACE}/build
+          cpack
+
+      - name: Find packaged zip name
+        id: zipname
+        run: |
+          cd ${GITHUB_WORKSPACE}/build
+          pattern="${project_name}-*.zip"
+          files = $(pattern)
+          echo "NAME=${files[0]}" >> ${GITHUB_OUTPUT}
+
+      - name: Upload mod artifact
+        uses: actions/upload-artifact@v2
+        with:
+          path: ${GITHUB_WORKSPACE}/build/${{ steps.zipname.outputs.NAME }}
+          if-no-files-found: error
+
+      - name: Upload release artifacts
+        if: startsWith(github.ref, 'refs/tags/v')
+        id: upload_file_release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          files: |
+            ${GITHUB_WORKSPACE}/build/${{ steps.zipname.outputs.NAME }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,4 @@
+mods/ferret_mod/files/ferret_ragdolls/henry/head.png
+mods/ferret_mod/files/ferret_ragdolls/henry/torso_right.png
+mods/ferret_mod/files/ferret_ragdolls/henry/torso_left.png
+mods/ferret_mod/files/ferret_ragdolls/henry/tail.png

@@ -1,0 +1,4 @@
+mods/ferret_mod/files/ferret_ragdolls/beans/head.png
+mods/ferret_mod/files/ferret_ragdolls/beans/torso_right.png
+mods/ferret_mod/files/ferret_ragdolls/beans/torso_left.png
+mods/ferret_mod/files/ferret_ragdolls/beans/tail.png

@@ -1,0 +1,25 @@
+
+<!--serialize makes it so the entity is entirely serialized, making it possible to save the state of it-->
+<Entity tags="ferret" name="$ferretmod_animal_ferret" serialize="1" ui_use_raw_name="true">
+    <Base file="data/entities/animals/rat.xml" >
+		<ItemChestComponent level="0"/>
+		<GenomeDataComponent
+			herd_id="rat"
+			food_chain_rank="10"
+			is_predator="1"
+        />
+
+		<!-- cbc destroys and respawns an entity, rather than saving its state, remove it with _remove_from_base -->
+		<CameraBoundComponent _remove_from_base="1"/>
+
+        <VariableStorageComponent name="behaviour"/>
+	</Base>
+
+	<LuaComponent
+		tags="ferretskin"
+		execute_on_added="1"
+		call_init_function="1"
+		execute_every_n_frame="0"
+		script_source_file="mods/ferret_mod/files/scripts/ferret.lua"
+	/>
+</Entity>

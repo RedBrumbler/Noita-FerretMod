@@ -1,0 +1,4 @@
+mods/ferret_mod/files/ferret_ragdolls/loki/head.png
+mods/ferret_mod/files/ferret_ragdolls/loki/torso_right.png
+mods/ferret_mod/files/ferret_ragdolls/loki/torso_left.png
+mods/ferret_mod/files/ferret_ragdolls/loki/tail.png

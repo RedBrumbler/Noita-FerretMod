@@ -1,0 +1,127 @@
+<Sprite
+    filename="mods/ferret_mod/files/ferret_gfx/ghost.png"
+    offset_x="20"
+    offset_y="12"
+    default_animation="stand"
+>
+
+    <RectAnimation
+        name="stand"
+        pos_x="0"
+        pos_y="0"
+
+        frame_count="6"
+        frame_height="20"
+        frame_width="20"
+        frame_wait="0.1"
+        frames_per_row="6"
+    />
+
+    <RectAnimation
+        name="walk"
+        pos_x="0"
+        pos_y="20"
+
+        frame_count="6"
+        frame_height="20"
+        frame_width="20"
+        frame_wait="0.06"
+        frames_per_row="6"
+    >
+        <Event
+            check_physics_material="1"
+            frame="1"
+            max_distance="500"
+            name="step"
+            on_finished="0"
+            probability="1"
+        />
+    </RectAnimation>
+
+    <RectAnimation
+        name="run"
+        pos_x="0"
+        pos_y="20"
+
+        frame_count="6"
+        frame_height="20"
+        frame_width="20"
+        frame_wait="0.06"
+        frames_per_row="6"
+    >
+        <Event
+            check_physics_material="1"
+            frame="1"
+            max_distance="500"
+            name="step"
+            on_finished="0"
+            probability="1"
+        />
+    </RectAnimation>
+
+    <RectAnimation
+        name="burn"
+        pos_x="0"
+        pos_y="20"
+
+        frame_count="6"
+        frame_height="20"
+        frame_width="20"
+        frame_wait="0.06"
+        frames_per_row="6"
+    >
+        <Event
+            check_physics_material="1"
+            frame="1"
+            max_distance="500"
+            name="step"
+            on_finished="0"
+            probability="1"
+        />
+    </RectAnimation>
+
+    <RectAnimation
+        name="jump_up"
+        pos_x="0"
+        pos_y="40"
+        loop="0"
+
+        frame_count="3"
+        frame_height="20"
+        frame_width="20"
+        frame_wait="0.082"
+        frames_per_row="3"
+    >
+        <Event
+            check_physics_material="1"
+            frame="0"
+            max_distance="500"
+            name="jump"
+            on_finished="0"
+            probability="1"
+        />
+    </RectAnimation>
+
+    <RectAnimation
+        name="attack"
+        pos_x="0"
+        pos_y="80"
+        loop="0"
+        shrink_by_one_pixel="1"
+
+        frame_count="4"
+        frame_height="20"
+        frame_width="20"
+        frame_wait="0.082"
+        frames_per_row="4"
+    >
+        <Event
+            check_physics_material="0"
+            frame="2"
+            max_distance="500"
+            name="attack_bite"
+            on_finished="0"
+            probability="1"
+        />
+    </RectAnimation>
+</Sprite>

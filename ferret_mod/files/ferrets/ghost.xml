@@ -1,0 +1,16 @@
+<Entity tags="ferret" name="ghost" serialize="1" ui_use_raw_name="true">
+    <Base file="mods/ferret_mod/files/ferret.xml">
+        <DamageModelComponent
+			ragdoll_filenames_file="mods/ferret_mod/files/ferret_ragdolls/ghost/filenames.txt"
+			ragdoll_offset_y="-1"
+			hp="0.2"
+			air_needed="1"
+		/>
+
+		<SpriteComponent
+			image_file="mods/ferret_mod/files/ferret_gfx/ghost.xml"
+			offset_x="10"
+			offset_y="10"
+        />
+    </Base>
+</Entity>
