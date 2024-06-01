@@ -47,7 +47,7 @@ jobs:
         run: |
           cd ${GITHUB_WORKSPACE}/build
           pattern="${project_name}-*.zip"
-          files = $(pattern)
+          files=( $pattern )
           echo "NAME=${files[0]}" >> ${GITHUB_OUTPUT}
 
       - name: Upload mod artifact
