@@ -28,13 +28,13 @@ jobs:
       - name: CMake generate without version
         if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
         run: |
-          cmake -G "Ninja" -B "build" -S "ferret_mod"
+          cmake -G "Ninja" -B "build" -S .
           cmake --build "build"
 
       - name: CMake generate with version
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
-          cmake -G "Ninja" -B "build" -S "ferret_mod" -DMOD_VERSION=${{ steps.version.outputs.VERSION }}
+          cmake -G "Ninja" -B "build" -S . -DMOD_VERSION=${{ steps.version.outputs.VERSION }}
           cmake --build "build"
 
       - name: Pack
