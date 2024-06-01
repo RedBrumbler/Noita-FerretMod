@@ -63,6 +63,6 @@ jobs:
         with:
           tag_name: ${{ github.event.inputs.version }}
           files: |
-            ${GITHUB_WORKSPACE}/build/${{ steps.zipname.outputs.NAME }}
+            ./build/${{ steps.zipname.outputs.NAME }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
