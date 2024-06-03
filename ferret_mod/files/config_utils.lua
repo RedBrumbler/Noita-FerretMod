@@ -7,10 +7,17 @@ function GetFerretsFriendly()
 end
 
 --- @brief whether friendly ferrets should be made invulnerable
---- @return boolean
+--- @return boolean invulnerable
 function GetFriendlyFerretsInvulnerable()
     return ModSettingGet("ferret_mod.friendly_invulnerable") == true
 end
+
+--- @brief whether all ferrets are invulnerable, especially for thor
+--- @return boolean invulnerable
+function GetAllFerretsInvulnerable()
+    return ModSettingGet("ferret_mod.everything_invulnerable") == true
+end
+
 --- @brief get whether to naturally spawn ferrets in biomes at all
 --- @return boolean
 function GetDoSpawnFerrets()

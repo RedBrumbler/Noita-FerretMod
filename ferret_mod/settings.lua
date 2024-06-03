@@ -42,6 +42,13 @@ mod_settings = {
 				value_default = false,
 				scope = MOD_SETTING_SCOPE_NEW_GAME,
 			},
+			{
+				id = "everything_invulnerable",
+				ui_name = "All Ferrets Invulnerable",
+				ui_description = "Option for Thor who doesn't want to hurt any ferrets\nFerrets will still bite you though!",
+				value_default = false,
+				scope = MOD_SETTING_SCOPE_NEW_GAME,
+			}
 		}
 	},
 	{

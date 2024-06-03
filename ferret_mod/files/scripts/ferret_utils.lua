@@ -103,8 +103,10 @@ function SetFerretGenome(entity_id, genome)
     SetStoredGenome(entity_id, genome)
 
     -- if ferret is friendly and friendlies are invuln, set damage model enabled state to true
-    local friendly_and_invuln = (genome == E_FRIENDLY_FERRET) and GetFriendlyFerretsInvulnerable()
-    SetDamageModelActive(entity_id, not friendly_and_invuln)
+    -- alternatively if you're Thor and don't want to hurt ferrets, they just get turned invulnerable straight up
+    local friendly_and_invulnerable = (genome == E_FRIENDLY_FERRET) and GetFriendlyFerretsInvulnerable()
+    local all_invulnerable = GetAllFerretsInvulnerable()
+    SetDamageModelActive(entity_id, not (friendly_and_invulnerable or all_invulnerable))
 end
 
 --- @param entity_id integer
