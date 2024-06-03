@@ -13,7 +13,7 @@ dofile("data/scripts/lib/mod_settings.lua") -- see this file for documentation o
 -- ModSettingSetNextValue() will set the buffered value, that will later become visible via ModSettingGet(), unless the setting scope is MOD_SETTING_SCOPE_RUNTIME.
 
 local mod_id = "ferret_mod" -- This should match the name of your mod's folder.
-mod_settings_version = 1 -- This is a magic global that can be used to migrate settings to new mod versions. call mod_settings_get_version() before mod_settings_update() to get the old value.
+mod_settings_version = 2 -- This is a magic global that can be used to migrate settings to new mod versions. call mod_settings_get_version() before mod_settings_update() to get the old value.
 mod_settings = {
 	{
 		id = "ferret_friends",
