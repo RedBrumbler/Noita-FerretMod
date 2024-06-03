@@ -4,6 +4,7 @@
 		You can configure how the ferrets behave from the mod config.
 		By default ferrets are friends that don't attack you, but this also means they don't reward you for attacking them!
 		There's also some twitch integration events added so chat can join in on the fun!
+		Since Thor didn't want to hurt ferrets, you can now configure either friendly or all ferrets to be invulnerable.
 
 		Find the github repo at https://github.com/RedBrumbler/Noita-FerretMod if you're interested in how this mod is made.
 		Go Make Games! And watch the ferrets at http://ferrets.live"
