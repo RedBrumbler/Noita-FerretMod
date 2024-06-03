@@ -101,6 +101,10 @@ function SetFerretGenome(entity_id, genome)
     -- print("Setting genome " .. genome_name .. " (id " .. tostring(genome_id) .. ")")
     component_write(genome_data, { herd_id = genome_id })
     SetStoredGenome(entity_id, genome)
+
+    -- if ferret is friendly and friendlies are invuln, set damage model enabled state to true
+    local friendly_and_invuln = (genome == E_FRIENDLY_FERRET) and GetFriendlyFerretsInvulnerable()
+    SetDamageModelActive(entity_id, not friendly_and_invuln)
 end
 
 --- @param entity_id integer

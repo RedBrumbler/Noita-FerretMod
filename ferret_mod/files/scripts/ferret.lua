@@ -36,9 +36,4 @@ function init(entity_id)
     end
 
     genome = GetStoredGenome(entity_id)
-    -- if ferret is friendly and friendlies are invuln, set damage model enabled state to true
-
-    local friendly_and_invuln = genome == E_FRIENDLY_FERRET and GetFriendlyFerretsInvulnerable()
-
-    SetDamageModelActive(entity_id, not friendly_and_invuln)
 end
