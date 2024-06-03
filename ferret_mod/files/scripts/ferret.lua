@@ -6,7 +6,6 @@ local default_skin = "beans"
 
 --- @param entity_id integer entity id
 function init(entity_id)
-    print("ferret.init", entity_id)
     local enabled_ferrets = GetEnabledFerrets()
 
     -- check whether this spawned entity has a ferret model set already
@@ -24,21 +23,22 @@ function init(entity_id)
     end
 
     local genome = GetStoredGenome(entity_id)
-    print("genome before setup: " .. tostring(genome))
     -- if it wasn't already set or invalid, set it up so it works
     if genome == E_INVALID_FERRET then
-        print("fresh")
         local friendly = GetFerretsFriendly()
         SetFerretFriendly(entity_id, friendly)
 
         -- friendly ferrets should not drop gold, make it unappealing to shoot them
         SetFerretDropsGold(entity_id, friendly == false)
     else
-        print("recycle")
         SetFerretGenome(entity_id, genome)
         SetFerretDropsGold(entity_id, GetGenomeDropsGold(genome) == true)
     end
 
     genome = GetStoredGenome(entity_id)
-    print("genome after setup: " .. tostring(genome))
+    -- if ferret is friendly and friendlies are invuln, set damage model enabled state to true
+
+    local friendly_and_invuln = genome == E_FRIENDLY_FERRET and GetFriendlyFerretsInvulnerable()
+
+    SetDamageModelActive(entity_id, not friendly_and_invuln)
 end

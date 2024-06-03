@@ -44,6 +44,13 @@ mod_settings = {
 		scope = MOD_SETTING_SCOPE_NEW_GAME,
 	},
 	{
+		id = "friendly_invulnerable",
+		ui_name = "Friendly Ferrets Invulnerable",
+		ui_description = "Friendly ferrets are invulnerable",
+		value_default = false,
+		scope = MOD_SETTING_SCOPE_NEW_GAME,
+	},
+	{
 		category_id = "enabled_ferrets",
 		foldable = true,
 		_folded = true,

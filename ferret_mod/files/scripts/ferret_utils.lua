@@ -174,3 +174,18 @@ function SetFerretSkin(entity_id, ferret)
     -- set the ragdoll filenames file
     component_write(damage_component, {ragdoll_filenames_file = "mods/ferret_mod/files/ferret_ragdolls/" .. ferret .. "/filenames.txt"})
 end
+
+--- @brief sets the damage model active or not
+--- @param entity_id integer
+--- @param active boolean
+function SetDamageModelActive(entity_id, active)
+    local damage_model = EntityGetFirstComponentIncludingDisabled(entity_id, "DamageModelComponent")
+    if damage_model == nil then
+        print("Can't set damage model active state because it wasn't found on entity")
+        return
+    end
+
+    print("Setting damage model enabled: " .. tostring(entity_id) .. ", " .. tostring(damage_model) .. ", " .. tostring(active))
+
+    EntitySetComponentIsEnabled(entity_id, damage_model, active)
+end
