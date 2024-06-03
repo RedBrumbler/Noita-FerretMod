@@ -1,6 +1,6 @@
 
 <!--serialize makes it so the entity is entirely serialized, making it possible to save the state of it-->
-<Entity tags="ferret" name="$ferretmod_animal_ferret" serialize="1" ui_use_raw_name="true">
+<Entity name="$ferretmod_animal_ferret" serialize="1" ui_use_raw_name="true">
     <Base file="data/entities/animals/rat.xml" >
 		<ItemChestComponent level="0"/>
 		<GenomeDataComponent
