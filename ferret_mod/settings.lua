@@ -13,29 +13,8 @@ dofile("data/scripts/lib/mod_settings.lua") -- see this file for documentation o
 -- ModSettingSetNextValue() will set the buffered value, that will later become visible via ModSettingGet(), unless the setting scope is MOD_SETTING_SCOPE_RUNTIME.
 
 local mod_id = "ferret_mod" -- This should match the name of your mod's folder.
-mod_settings_version = 2 -- This is a magic global that can be used to migrate settings to new mod versions. call mod_settings_get_version() before mod_settings_update() to get the old value.
+mod_settings_version = 3 -- This is a magic global that can be used to migrate settings to new mod versions. call mod_settings_get_version() before mod_settings_update() to get the old value.
 mod_settings = {
-	{
-		id = "ferret_friends",
-		ui_name = "Ferrets are friendly",
-		ui_description = "Whether ferrets are friendly to the player\nFriendly or allied ferrets don't drop gold\nTo discourage bad behaviour",
-		value_default = true,
-		scope = MOD_SETTING_SCOPE_NEW_GAME,
-	},
-	{
-		id = "spawn_ferrets",
-		ui_name = "Spawn ferrets naturally",
-		ui_description = "Whether ferrets spawn naturally in various biomes",
-		value_default = true,
-		scope = MOD_SETTING_SCOPE_NEW_GAME,
-	},
-	{
-		id = "spawn_ferrets_in_shop",
-		ui_name = "Spawn ferrets in shop",
-		ui_description = "Spawn some friendly ferrets in the shop area\nUnwise if you decide to anger the gods",
-		value_default = true,
-		scope = MOD_SETTING_SCOPE_NEW_GAME,
-	},
 	{
 		id = "ferret_integration",
 		ui_name = "Twitch ferret integration",
@@ -44,11 +23,48 @@ mod_settings = {
 		scope = MOD_SETTING_SCOPE_NEW_GAME,
 	},
 	{
-		id = "friendly_invulnerable",
-		ui_name = "Friendly Ferrets Invulnerable",
-		ui_description = "Friendly ferrets are invulnerable",
-		value_default = false,
-		scope = MOD_SETTING_SCOPE_NEW_GAME,
+		category_id = "ferret_behaviour",
+		foldable = false,
+		ui_name = "Ferret behaviour",
+		ui_description = "Some options to change what ferrets can do",
+		settings = {
+			{
+				id = "ferret_friends",
+				ui_name = "Ferrets are friendly",
+				ui_description = "Whether ferrets are friendly to the player\nFriendly or allied ferrets don't drop gold\nTo discourage bad behaviour",
+				value_default = true,
+				scope = MOD_SETTING_SCOPE_NEW_GAME,
+			},
+			{
+				id = "friendly_invulnerable",
+				ui_name = "Friendly Ferrets Invulnerable",
+				ui_description = "Friendly ferrets are invulnerable",
+				value_default = false,
+				scope = MOD_SETTING_SCOPE_NEW_GAME,
+			},
+		}
+	},
+	{
+		category_id = "ferret_spawns",
+		foldable = false,
+		ui_name = "Spawn behaviour",
+		ui_description = "Where will ferrets spawn?",
+		settings = {
+			{
+				id = "spawn_ferrets",
+				ui_name = "Spawn ferrets naturally",
+				ui_description = "Whether ferrets spawn naturally in various biomes",
+				value_default = true,
+				scope = MOD_SETTING_SCOPE_NEW_GAME,
+			},
+			{
+				id = "spawn_ferrets_in_shop",
+				ui_name = "Spawn ferrets in shop",
+				ui_description = "Spawn some friendly ferrets in the shop area\nUnwise if you decide to anger the gods",
+				value_default = true,
+				scope = MOD_SETTING_SCOPE_NEW_GAME,
+			}
+		}
 	},
 	{
 		category_id = "enabled_ferrets",
