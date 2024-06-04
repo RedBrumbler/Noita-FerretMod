@@ -191,7 +191,5 @@ function SetDamageModelActive(entity_id, active)
         return
     end
 
-    print("Setting damage model enabled: " .. tostring(entity_id) .. ", " .. tostring(damage_model) .. ", " .. tostring(active))
-
     EntitySetComponentIsEnabled(entity_id, damage_model, active)
 end
