@@ -18,7 +18,14 @@ mod_settings = {
 	{
 		id = "ferret_integration",
 		ui_name = "Twitch ferret integration",
-		ui_description = "Add some ferret events to the twitch integration, letting chat spawn ferrets at the player location",
+		ui_description = "Add some ferret events to the twitch integration,\nletting chat spawn ferrets at the player location",
+		value_default = true,
+		scope = MOD_SETTING_SCOPE_NEW_GAME,
+	},
+	{
+		id = "ferret_path",
+		ui_name = "Shape of Ferret Affects Projectile Path",
+		ui_description = "Whether Shape of Ferret also makes your projectiles do weird ferret jank.\nMostly there to balance out the reduced mana cost which is basically free.",
 		value_default = true,
 		scope = MOD_SETTING_SCOPE_NEW_GAME,
 	},

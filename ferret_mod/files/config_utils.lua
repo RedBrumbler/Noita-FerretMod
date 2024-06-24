@@ -36,6 +36,12 @@ function GetDoAddFerretIntegration()
     return ModSettingGet("ferret_mod.ferret_integration") == true
 end
 
+--- @brief get whether to add the ferret path entity to the ferret shape spell
+--- @return boolean
+function GetDoFerretPath()
+    return ModSettingGet("ferret_mod.ferret_path") == true
+end
+
 --- @brief Get whether the specific ferret is enabled in the settings
 --- @param ferret string the ferret to check for
 --- @return boolean enabled whether the ferret is enabled in settings, returns false if it's a ferret the mod doesn't know about

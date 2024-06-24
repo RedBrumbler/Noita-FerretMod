@@ -16,8 +16,12 @@ local ferretmod_custom_actions = {
 		mana = -10,
 		action 		= function()
             local ferret = random_from_array(GetKnownFerrets())
-			-- this extra entity adds the janky movement
-			c.extra_entities = c.extra_entities .. "mods/ferret_mod/files/ferret_path.xml,"
+			-- check with the config whether to add the janky movement
+			if GetDoFerretPath() then
+				-- this extra entity adds the janky movement
+				c.extra_entities = c.extra_entities .. "mods/ferret_mod/files/ferret_path.xml,"
+			end
+
 			-- pick a random bullet shape
             c.sprite = "mods/ferret_mod/files/ferret_gfx/bullet_shape/" .. ferret .. ".xml";
 
