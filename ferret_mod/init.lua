@@ -19,6 +19,10 @@ end
 if GetDoAddFerretIntegration() then
     ModLuaFileAppend( "data/scripts/streaming_integration/event_list.lua", "mods/ferret_mod/files/streaming_integration/ferret_events.lua")
 end
+
+-- add ferret spells
+ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/ferret_mod/files/actions/gun_actions.lua")
+
 -- add translations
 -- ,en,ru,pt-br,es-es,de,fr-fr,it,pl,zh-cn,jp,ko,,NOTES – use \n for newline,max length,,,,,,,,,,
 local content = ModTextFileGetContent("data/translations/common.csv")
@@ -38,4 +42,8 @@ integration_ferretmod_GHOST_name,Ghost the ferret,,,,,,,,,,,,,
 integration_ferretmod_GHOST_desc,,,,,,,,,,,,,,
 integration_ferretmod_LOKI_name,Loki the ferret,,,,,,,,,,,,,
 integration_ferretmod_LOKI_desc,,,,,,,,,,,,,,
+integration_ferretmod_SHAPE_OF_FERRET_name,Shape Of Ferret,,,,,,,,,,,,,
+integration_ferretmod_SHAPE_OF_FERRET_desc,Spawns a spell to shape projectiles as ferrets,,,,,,,,,,,,,
+ferretmod_action_ferret_shape,Shape Of Ferret,,,,,,,,,,,,,
+ferretmod_action_ferret_shape_desc,Adorable ferrets will shape your projectiles. The longer they exist the unrulier they become,,,,,,,,,,,,,
 ]]):gsub("\r\n","\n"):gsub("\n\n","\n"))
